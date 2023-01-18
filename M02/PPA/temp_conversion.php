@@ -1,4 +1,4 @@
-<html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8"/>
@@ -23,7 +23,7 @@ function fahrenheitToCelsius($fahrenheit){
     return ($fahrenheit - 32) * 5/9;
 }
 
-echo "<table border='1' style='width: 100%;'>";
+echo "<table>";
 echo "<tr><th>Fahrenheit</th><th>Celsius</th></tr>";
 for ($fahrenheit = 0; $fahrenheit <= 100; $fahrenheit+=2){
     $celsius = fahrenheitToCelsius($fahrenheit);

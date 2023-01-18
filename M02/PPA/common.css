@@ -19,3 +19,11 @@ label { display: block; float: left; clear: both; text-align: right; margin: 0.6
 input, select, textarea { float: right; margin: 1em 0 0 0; width: 57%; }
 input { border: 1px solid #666; }
 input[type=radio], input[type=checkbox], input[type=submit], input[type=reset], input[type=button], input[type=image] { width: auto; }
+
+/* Tables */
+table { width: 100%; border-collapse: collapse; border: 1px solid #666; margin: 1em 0; }
+th, td { border: 1px solid #666; padding: 0.5em; }
+th { background: #DDDDB7; text-align: left; }
+caption { text-align: left; margin: 0 0 0.5em; }
+
+
