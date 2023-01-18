@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SshConfigs">
+    <configs>
+      <sshConfig authType="PASSWORD" host="ko-turing3.ads.iu.edu" id="e61a4309-233a-4f6b-9229-a6ed62caa9a4" port="22" nameFormat="DESCRIPTIVE" username="natsumpt" useOpenSSHConfig="true" />
+    </configs>
+  </component>
+</project>
