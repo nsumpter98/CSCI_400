@@ -12,14 +12,16 @@
 
 
 <?php
-function createRow($fahrenheit, $celsius){
+function createRow($fahrenheit, $celsius): void
+{
     echo "<tr>";
     echo "<td>$fahrenheit</td>";
     echo "<td>$celsius</td>";
     echo "</tr>";
 }
 
-function fahrenheitToCelsius($fahrenheit){
+function fahrenheitToCelsius($fahrenheit): float|int
+{
     return ($fahrenheit - 32) * 5/9;
 }
 
