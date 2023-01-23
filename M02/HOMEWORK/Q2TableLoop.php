@@ -21,7 +21,7 @@ echo "</table>";
 echo "</div>";
 
 
-htmlFooter();
+htmlFooter("01-22-2023");
 
 
 

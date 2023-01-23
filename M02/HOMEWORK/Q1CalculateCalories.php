@@ -28,6 +28,6 @@ echo "<h2>You burned {$caloriesBurned} calories and lost {$poundsLost} pounds.</
 echo "<p>That's {$hoursBiking} hours of biking, {$hoursJogging} hours of jogging, and {$hoursSwimming} hours of swimming.</p>";
 echo "</div>";
 
-htmlFooter();
+htmlFooter("01-22-2023");
 
 

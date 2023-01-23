@@ -1,13 +1,12 @@
 <?php
 /*html footer default*/
-function htmlFooter(): void
+function htmlFooter($dateCompleted): void
 {
-    //add current date and time to footer
-    $date = date("m/d/Y");
+
     echo "
     </div>
     <footer>
-        <p>Current date: $date</p>
+        <p>Date Completed: $dateCompleted</p>
     </footer>
     </body>
     </html>";
