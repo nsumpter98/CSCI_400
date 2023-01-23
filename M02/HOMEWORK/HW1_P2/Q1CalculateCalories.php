@@ -39,14 +39,17 @@ $poundsLost = $caloriesBurned / $calories;
 
 if($displayForm){
 
-echo "<div class='card'>";
-echo "<form action='Q1CalculateCalories.php' method='post'>";
-echo "<label>Number of hours cycling:</label> <input type='text' name='hoursCycling'><br>";
-echo "<label>Number of hours jogging:</label> <input type='text' name='hoursJogging'><br>";
-echo "<label>Number of hours swimming:</label> <input type='text' name='hoursSwimming'><br>";
-echo "<input name='calculate' type='submit' value='submit'>";
-echo "</form>";
-echo "</div>";
+echo <<<FORM
+<div class='card'>
+<form action='Q1CalculateCalories.php' method='post'>
+<label>Number of hours cycling:</label> <input type='text' name='hoursCycling'><br>
+<label>Number of hours jogging:</label> <input type='text' name='hoursJogging'><br>
+<label>Number of hours swimming:</label> <input type='text' name='hoursSwimming'><br>
+<input name='calculate' type='submit' value='submit'>
+</form>
+</div>
+FORM;
+
 
 
 }else{
