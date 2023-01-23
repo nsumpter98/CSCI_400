@@ -67,12 +67,36 @@ footer {
     background-color: #305a77;
     color: #fff;
     padding: 1rem;
-    text-align: left;
+    /*text-align: left;*/
     height: 30px;
     position: fixed;
     bottom: 0;
     width: 100%;
 
+}
+
+.previous {
+    background-color: #305a77;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-align: left;
+    text-decoration: none;
+    transition: background-color 0.2s ease-in-out;
+    float: left;
+    margin: 0 0 0 0;
+}
+
+.next {
+    background-color: #305a77;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-align: left;
+    text-decoration: none;
+    transition: background-color 0.2s ease-in-out;
+    float: right;
+    margin: 0 5px 0 0;
 }
 
 footer a {
