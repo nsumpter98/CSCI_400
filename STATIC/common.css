@@ -3,8 +3,8 @@ body {
     background-color: #ffffff;
     color: #192e3a;
     font-family: Arial, sans-serif;
-    padding: 0;
     margin: 0;
+    padding: 4rem 0 3rem;
 }
 
 a {
@@ -56,6 +56,9 @@ header {
     padding: 1rem;
     display: flex;
     align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
 }
 
 header h1 {
@@ -68,7 +71,7 @@ footer {
     color: #fff;
     padding: 1rem;
     /*text-align: left;*/
-    height: 30px;
+    height: 20px;
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -78,7 +81,7 @@ footer {
 .previous {
     background-color: #305a77;
     color: #fff;
-    padding: 0.5rem 1rem;
+    padding: 0.2rem 1rem;
     border-radius: 5px;
     text-align: left;
     text-decoration: none;
@@ -90,7 +93,7 @@ footer {
 .next {
     background-color: #305a77;
     color: #fff;
-    padding: 0.5rem 1rem;
+    padding: 0.2rem 1rem;
     border-radius: 5px;
     text-align: left;
     text-decoration: none;
@@ -176,6 +179,31 @@ tr:nth-child(even) {
 tr:hover {
     background-color: #2bc3c8;
 }
+
+
+/*CSS for form labels and inputs*/
+
+label {
+    display: block;
+    margin: 0.5rem 0;
+}
+
+input {
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    border: 1px solid #305a77;
+    border-radius: 5px;
+}
+
+label {
+    display: block;
+    margin: 0.5rem 0;
+    color: white;
+
+
+}
+
+
 
 
 
