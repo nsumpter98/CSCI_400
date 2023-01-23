@@ -30,5 +30,4 @@ echo "</div>";
 
 htmlFooter();
 
-?>
 
