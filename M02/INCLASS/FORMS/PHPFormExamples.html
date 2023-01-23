@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!--
+Sample Sequential Programming Problem - PHP Forms
+-->
+
+<html lang="en">
+
+   <head>
+      <meta charset = "utf-8" />
+      <title>PHP Forms - Sequential Programming Problems</title>
+	<!--  <link rel="stylesheet" type="text/css" href="common.css" /> -->
+   </head>
+
+   <body>
+      <h3>Tip Calculation:</h3>
+      <form action="TipCalculator.php" method="get">
+      
+      <table style="border-width: 0;">
+      <tr>
+      	<td>Enter bill total</td>
+      	<td><input required type="text" name="total" id="total" size = "10" /></td>
+      </tr>  
+      <tr>
+      	<td>Enter tip (%)</td>
+      	<td><input required type="text" name="tip" id="tip" size = "10" /></td>
+      </tr>		
+      <tr>
+      	<td><input type="submit" name="Calculate Tip" id="calculate" value="calculate" /></td>
+      	<td><input type="reset" name="resetButton" id="resetButton0" value="Reset" /></td>
+      </tr>				
+      </table>
+        
+      </form>
+	  
+	   <h3>Average Velocity:</h3>
+      <form action="velocity.php" method="get">
+      
+      <table border="0">
+      <tr>
+      	<td>Enter X1</td>
+      	<td><input type="text" name="x1" id="x1" size = "5" /></td>
+      	<td>Enter X2</td>
+      	<td><input type="text" name="x2" id="x2" size = "5" /></td>
+      </tr>  
+      <tr>
+      	<td>Enter T1</td>
+      	<td><input type="text" name="t1" id="t1" size = "5" /></td>
+      	<td>Enter T2</td>
+      	<td><input type="text" name="t2" id="t2" size = "5" /></td>
+      </tr>		
+      <tr>
+      	<td><input type="submit" name="AvgVelocity" id="AvgVelocity" value="Avg Velocity" /></td>
+      	<td><input type="reset" name="resetButton" id="resetButton1" value="Reset" /></td>
+      </tr>				
+      </table>
+        
+      </form>
+	  
+	 <h3>Compound Interest:</h3>
+      <form action="interest.php" method="get">
+      
+      <table border="0">
+      <tr>
+      	<td>Enter Principal</td>
+      	<td><input type="text" name="principal" id="principal" size = "5" /></td>
+      </tr>  
+      <tr>
+      	<td>Enter Interest Rate</td>
+      	<td><input type="text" name="rate" id="rate" size = "5" /></td>
+      </tr>		
+      <tr>
+      	<td><input type="submit" name="CompoundInterest" id="CompoundInterest" value="Compound Interest" /></td>
+      	<td><input type="reset" name="resetButton" id="resetButton2" value="Reset" /></td>
+      </tr>				
+      </table>
+        
+      </form>
+   </body>
+</html>
