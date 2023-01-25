@@ -5,7 +5,6 @@ function processFormJSON(): void
 {
     $courseID = $_POST['courseID'];
     $grade = $_POST['grade'];
-    $grade = (int)$grade;
 
     global $message;
     $status = "success";
@@ -13,12 +12,6 @@ function processFormJSON(): void
 
     if (strtoupper($courseID) != 'CSCI400' && strtoupper($courseID) != 'CSCI343') {
         $message = "Invalid course ID";
-        $status = "error";
-        $pass = false;
-    }
-
-    if (($grade < 0) || ($grade > 100)) {
-        $message = "Invalid grade";
         $status = "error";
         $pass = false;
     }
@@ -34,6 +27,20 @@ function processFormJSON(): void
         $status = "fail";
         $pass = false;
     }
+
+    if (!is_numeric($grade)) {
+        $message = "Invalid grade";
+        $status = "error";
+        $pass = false;
+    }
+
+    if (($grade < 0) || ($grade > 100)) {
+        $message = "Invalid grade";
+        $status = "error";
+        $pass = false;
+    }
+
+
 
     if ($pass) {
         $message = "You have successfully PASSED $courseID with a grade of $grade!";

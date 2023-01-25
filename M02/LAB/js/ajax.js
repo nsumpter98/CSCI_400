@@ -31,7 +31,7 @@ function submitForm(){
                 document.getElementById("resultsCard").style.backgroundColor = "red";
             }
 
-            if(json.status === "error"){
+            if(json.status === "success"){
                 document.getElementById("form1").reset();
             }
 
