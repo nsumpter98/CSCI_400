@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../../STATIC/common.css" />
+    <title>Title</title>
+</head>
+<body>
+<header>
+  <h1>Lab 1</h1>
+</header>
+<div class="content">
+
+  <div class="card">
+    <!--form to enter course ID and grade that will submit to ajax.js-->
+    <form id="form1" action="javascript:submitForm()">
+      <label for="courseID">Course ID:</label>
+      <input type="text" id="courseID" name="courseID" placeholder="Enter course ID">
+      <label for="grade">Grade:</label>
+      <input type="text" id="grade" name="grade" placeholder="Enter grade">
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+  <div class="card" id="resultsCard" style="display: none" >
+    <!--div to display the results of the ajax call-->
+    <div id="results"></div>
+  </div>
+
+</div>
+
+</body>
+<footer>
+  <script src="js/ajax.js"></script>
+</footer>
+</html>
