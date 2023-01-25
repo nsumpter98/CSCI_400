@@ -42,7 +42,7 @@ Here are some basic examples of the PHP concepts covered in this repository:
 
     greet("John"); // Outputs: "Hello, John!"
 ?>
-```php
+```
 # Arrays #
 ```php
 <?php
