@@ -30,7 +30,7 @@ if(isset($_POST['calculate'])){
 
 
 //calculate calories burned
-$caloriesBurned = ($hoursCycling * 500) + ($hoursRunning * 1000) + ($hoursSwimming * 600);
+$caloriesBurned = ($hoursCycling * 200) + ($hoursRunning * 475) + ($hoursSwimming * 275);
 
 //calculate pounds lost
 $poundsLost = $caloriesBurned / $calories;
@@ -41,12 +41,12 @@ if($displayForm){
 
 echo <<<FORM
 <div class='card'>
-<form action='Q1CalculateCalories.php' method='post'>
-<label>Number of hours cycling:</label> <input type='text' name='hoursCycling'><br>
-<label>Number of hours jogging:</label> <input type='text' name='hoursJogging'><br>
-<label>Number of hours swimming:</label> <input type='text' name='hoursSwimming'><br>
-<input name='calculate' type='submit' value='submit'>
-</form>
+    <form action='Q1CalculateCalories.php' method='post'>
+        <label>Number of hours cycling:</label> <input type='text' name='hoursCycling'><br>
+        <label>Number of hours jogging:</label> <input type='text' name='hoursJogging'><br>
+        <label>Number of hours swimming:</label> <input type='text' name='hoursSwimming'><br>
+        <input name='calculate' type='submit' value='submit'>
+    </form>
 </div>
 FORM;
 

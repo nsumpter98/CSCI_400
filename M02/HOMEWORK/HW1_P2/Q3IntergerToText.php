@@ -12,7 +12,7 @@ $num = $number;
 
 //check if all fields are filled
 if (isset($_POST['submit'])) {
-    if (empty($number) || $number < 0 || $number >= 1000) {
+    if ($number < 0 || $number >= 1000) {
         echo "<h3>All fields are required to be valid numbers!!</h3>";
     } else {
         $displayForm = FALSE;
@@ -44,12 +44,16 @@ if ($number > 0) {
     $numberText = $numberText . " " . $ones[$number];
 }
 
+if($numberText == ""){
+    $numberText = "zero";
+}
+
 if ($displayForm) {
 
     echo <<<FORM
     <div class='card'>
     <form action='Q3IntergerToText.php' method='post'>
-    <label>Enter a number between 0 and 1000:</label> <input type='text' name='number'><br>
+    <label>Enter a number greater than or equal to 0 and less than 1000:</label> <input type='text' name='number'><br>
     <input name='submit' type='submit' value='submit'>
     </form>
     </div>

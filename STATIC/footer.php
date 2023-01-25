@@ -3,10 +3,12 @@
 function htmlFooter($dateCompleted): void
 {
 
-    echo "
+
+    echo <<<E
     </div>
-    <footer>
-        ";
+        <footer>
+E;
+
 
     $current_file = basename($_SERVER['PHP_SELF']);
     $files = glob('*.php');
@@ -25,8 +27,12 @@ function htmlFooter($dateCompleted): void
 
 
 
-    echo "</footer>
+
+    echo <<<END
+        </footer>
     </body>
-    </html>";
+</html>
+END;
+
 }
 ?>
