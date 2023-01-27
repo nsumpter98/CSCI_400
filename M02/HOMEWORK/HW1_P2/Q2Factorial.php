@@ -12,7 +12,7 @@ $number = $_POST['number'];
 
 //check if all fields are filled
 if(isset($_POST['calculate'])){
-    if(empty($number) || $number < 0 || $number > 10){
+    if($number < 0 || $number > 10){
         echo "<h3>All fields are required to be valid numbers!!</h3>";
     }
     else{
