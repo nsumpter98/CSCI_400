@@ -5,9 +5,16 @@ PHP User-defined Functions
 -->
 
 <html>
-   <head>
-      <meta charset = "utf-8" />
-<title>User-defined Functions</title>
+<head>
+    <meta charset="utf-8"/>
+    <title>User-defined Functions</title>
+    <link rel="stylesheet" type="text/css" href="../../../STATIC/common.css"/>
+    <style>
+        body {
+
+            padding: 10px;
+        }
+    </style>
 </head>
 <body>
 
@@ -16,14 +23,17 @@ PHP User-defined Functions
 <?php
 
 //Value returning function
-function returnMessage() {
-     return "<p><strong>This message was returned from returnMessage().</strong></p>";
+function returnMessage(): string
+{
+    return "<p><strong>This message was returned from returnMessage().</strong></p>";
 }
 
 //Non-val returning function with two parameters, one param is assigned a default value:
-function displayMessage($message, $number=1) {
-     echo "<p>Message#$number is $message</p>";
+function displayMessage($message, $number = 1): void
+{
+    echo "<p>Message#$number is $message</p>";
 }
+
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 //Good practice is to place your function def. before the calls.
 
@@ -36,14 +46,16 @@ echo $msg;
 $incrementValue = 10;
 
 //Pass by reference:
-function incrementByReference(&$number) {
+function incrementByReference(&$number): void
+{
     global $incrementValue;
-	$number += $incrementValue;
+    $number += $incrementValue;
     echo "<p>The new number is $number</p>";
 }
+
 $num = 5;
 //Note: you must pass only a variable to such a function, not an expression!
-incrementByReference($num); 
+incrementByReference($num);
 echo "<p>The value of num after calling the func by reference is {$num}</p>";
 ?>
 </body>
