@@ -7,6 +7,8 @@
 <body>
 <h3>Civics Quiz</h3>
 <?php
+
+
 $displayForm = true;
 $correctAnswers = 0;
 $stateCapitals = array("Connecticut" => "Hartford", "Maine" => "Augusta");
@@ -44,7 +46,7 @@ function displayStats(array $stateCapitals): void
 
     echo "<p>You answered {$correctAnswers} out of {$totalQuestions} questions correctly.</p>";
     echo "<p>Your score is {$percentCorrect}%.</p>";
-    if($percentCorrect == 100){
+    if($correctAnswers == $totalQuestions){
         echo "<h1>You are a good citizen!</h1>";
     }
 
