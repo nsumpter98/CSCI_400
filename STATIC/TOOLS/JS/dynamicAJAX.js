@@ -1,17 +1,15 @@
 //dynamic async AJAX
-function dynamicAJAX(url, method, callback) {
-    let xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function() {
-        if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
-           // document.getElementById(target).innerHTML = xmlhttp.responseText;
-            if (callback) {
-                callback(xmlhttp.responseText);
-            }
+export function dynamicAJAX(url, payload, method, callback) {
+    let xhr = new XMLHttpRequest();
+    xhr.open(method, url, true);
+    xhr.onload = function () {
+        if (this.status === 200) {
+            callback(this.responseText);
         }
-    };
-    xmlhttp.open(method, url, true);
-    xmlhttp.send();
+    }
+    xhr.send(payload);
+
+
+
 }
 
-//export
-export {dynamicAJAX};
