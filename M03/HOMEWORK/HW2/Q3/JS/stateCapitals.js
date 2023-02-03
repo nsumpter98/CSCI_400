@@ -8,6 +8,13 @@ document.getElementById("StateCapitalsForm").addEventListener("submit", (event) 
 }
 );
 
+//listen for reset button
+document.getElementById("resetButton").addEventListener("click", (event) => {
+    event.preventDefault();
+    document.getElementById("StateCapitalsForm").reset();
+    document.getElementById("results").innerHTML = "";
+});
+
 
 
 function submitForm(){
@@ -38,8 +45,19 @@ function submitForm(){
 
     dynamicAJAX("StateCapitals.php", payload, "POST", (response) => {
         console.log("RESPONSE: " + JSON.stringify(JSON.parse(response), null, 2));
+        let responseObj = JSON.parse(response);
+
+
+        let percent = calculatePercentage(responseObj.results.filter((result) => result.correct).length, responseObj.results.length);
+        percent = percent.toFixed(2);
+        document.getElementById("results").innerHTML = `<p>You got ${percent}% correct</p>`;
 
 
     }
     );
+}
+
+//function to calculate the percentage of correct answers
+function calculatePercentage(correct, total){
+    return (correct/total)*100;
 }

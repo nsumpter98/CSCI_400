@@ -27,7 +27,8 @@ function constructPayload($states, $capitals, $answers): array
             "correct" => checkAnswer($state, $capital, $answers)
         );
     }
-    return $payload;
+
+    return array("results" => $payload);
 }
 
 
