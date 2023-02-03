@@ -26,18 +26,19 @@ function submitForm(){
             formData.get("Connecticut"),
             formData.get("Maine"),
             formData.get("Massachusetts"),
-            formData.get("New Hampshire"),
-            formData.get("Rhode Island"),
+            formData.get("NewHampshire"),
+            formData.get("RhodeIsland"),
             formData.get("Vermont")
         ]
     }
 
-    console.log("PAYLOAD: " + payload.capitals);
+    console.log(JSON.stringify(JSON.parse(JSON.stringify(payload)), null, 2));
 
 
 
     dynamicAJAX("StateCapitals.php", payload, "POST", (response) => {
-        console.log("RESPONSE: " + response);
+        console.log(JSON.stringify(JSON.parse(response), null, 2));
+
 
     }
     );

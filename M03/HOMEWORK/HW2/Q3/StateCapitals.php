@@ -30,18 +30,22 @@ function constructPayload($states, $capitals, $answers): array
     return $payload;
 }
 
-if(isset($_POST["payload"]))
-{
-    $states = $_POST["payload"]["states"];
-    $capitals = $_POST["payload"]["capitals"];
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $preload = json_decode(file_get_contents('php://input'), true);
+    $states = $preload["states"];
+    $capitals = $preload["capitals"];
+
     $payload = constructPayload($states, $capitals, $answers);
 }
 else
 {
     $payload = array(
-        "error" => "Invalid request"
+        "error" => "Invalid request",
+        "input" => json_decode(file_get_contents('php://input'), true)
     );
 }
+
 
 
 echo json_encode($payload);
