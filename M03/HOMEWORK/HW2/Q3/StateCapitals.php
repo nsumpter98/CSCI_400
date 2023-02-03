@@ -1,12 +1,12 @@
 <?php
 //array structure to hold answers
 $answers = array(
-    "Connecticut" => "Hartford",
-    "Maine" => "Augusta",
-    "Massachusetts" => "Boston",
-    "New Hampshire" => "Concord",
-    "Rhode Island" => "Providence",
-    "Vermont" => "Montpelier"
+    "Connecticut" => "hartford",
+    "Maine" => "augusta",
+    "Massachusetts" => "boston",
+    "New Hampshire" => "concord",
+    "Rhode Island" => "providence",
+    "Vermont" => "montpelier"
 );
 
 function checkAnswer($state, $capital, $answers): bool

@@ -23,21 +23,21 @@ function submitForm(){
             "Vermont"
         ],
         capitals: [
-            formData.get("Connecticut"),
-            formData.get("Maine"),
-            formData.get("Massachusetts"),
-            formData.get("NewHampshire"),
-            formData.get("RhodeIsland"),
-            formData.get("Vermont")
+            formData.get("Connecticut").trim().toLowerCase(),
+            formData.get("Maine").trim().toLowerCase(),
+            formData.get("Massachusetts").trim().toLowerCase(),
+            formData.get("NewHampshire").trim().toLowerCase(),
+            formData.get("RhodeIsland").trim().toLowerCase(),
+            formData.get("Vermont").trim().toLowerCase()
         ]
     }
 
-    console.log(JSON.stringify(JSON.parse(JSON.stringify(payload)), null, 2));
+    console.log("PAYLOAD: " + JSON.stringify(JSON.parse(JSON.stringify(payload)), null, 2));
 
 
 
     dynamicAJAX("StateCapitals.php", payload, "POST", (response) => {
-        console.log(JSON.stringify(JSON.parse(response), null, 2));
+        console.log("RESPONSE: " + JSON.stringify(JSON.parse(response), null, 2));
 
 
     }

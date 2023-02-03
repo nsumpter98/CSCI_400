@@ -42,13 +42,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-/*!* Tables *!
-table { width: 100%; border-collapse: collapse; border: 1px solid #666; margin: 1em 0; }
-th, td { border: 1px solid #666; padding: 0.5em; }
-th { background: #DDDDB7; text-align: left; }
-caption { text-align: left; margin: 0 0 0.5em; }*/
-
-
 
 header {
     background-color: #192e3a;
@@ -106,6 +99,73 @@ footer a {
     color: #2bc3c8;
     text-decoration: none;
 }
+
+/*style input text*/
+input[type=text] {
+    width: 100%;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+    background: #cccccc;
+    color: #000000;
+    font-size: 20px;
+    border-radius: 4px;
+
+}
+
+input[type=submit] {
+    width: 100%;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+    background: #cccccc;
+    color: #000000;
+    font-size: 20px;
+    border-radius: 4px;
+
+}
+
+input[type=submit]:hover {
+    background: #4096b9;
+    color: #fff;
+}
+
+input[type=reset]:hover {
+    background: #4096b9;
+    color: #fff;
+}
+
+input[type=submit]:active {
+    background: #06384d;
+    color: #fff;
+}
+
+input[type=reset]:active {
+    background: #06384d;
+    color: #fff;
+}
+
+
+
+input[type=reset] {
+    width: 100%;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+    background: #cccccc;
+    color: #000000;
+    font-size: 20px;
+    border-radius: 4px;
+
+}
+
+
 
 
 .card {
