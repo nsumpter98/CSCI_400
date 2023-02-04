@@ -1,5 +1,5 @@
 //dynamic async AJAX
-export function dynamicAJAX(url, payload, method, callback) {
+function dynamicAJAX(url, payload, method, callback) {
     let xhr = new XMLHttpRequest();
     xhr.open(method, url, true);
     xhr.setRequestHeader("Content-Type", "application/json");
@@ -10,10 +10,8 @@ export function dynamicAJAX(url, payload, method, callback) {
     }
     xhr.send(JSON.stringify(payload));
 
-
-
-
-
-
 }
+
+
+export { dynamicAJAX };
 
