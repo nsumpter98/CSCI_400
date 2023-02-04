@@ -4,3 +4,11 @@ input{
     padding: .1rem;
     margin: .1rem ;
 }
+
+/*class="check" go right in box*/
+.check{
+    float: right;
+    margin: 0;
+    padding: 0;
+}
+
