@@ -1,0 +1,55 @@
+<!DOCTYPE html> 
+<html>
+	<head>
+	  <meta charset = "utf-8" />
+      <title>Sample Registration Form</title>
+      <style type = "text/css">
+         label  { width: 5em; float: left; }
+      </style>
+   </head>
+   <body>
+      <h1>Registration Form</h1>
+      <p>Please fill in all fields and click Register.</p>
+   
+      <!-- post form data to registration_form.php -->
+      <form method = "post" action = "registration_form.php">
+         <h2>User Information</h2>
+
+         <!-- create four text boxes for user input -->
+         <div><label>Name:</label> 
+            <input type = "text" name = "fullname"></div>
+         <div><label>Email:</label>
+            <input type = "text" name = "email"></div>
+         <div><label>Phone:</label>
+            <input type = "text" name = "phone"></div>
+
+         <h2>Programming Languages</h2>
+         <p>Which programming language would you like to learn?</p>
+
+         <!-- create drop-down list containing languages -->
+         <select name = "language" >
+			<option value="Choose">Choose</option>
+            <option value="PHP">PHP</option>
+            <option value="Java">Java</option>
+            <option value="Javascript"> Javascript</option>
+            <option value="Visual Basic">Visual Basic</option>
+         </select>
+
+         <h2>Operating System</h2>
+         <p>Which operating system do you use?</p>
+
+         <!-- create five radio buttons -->
+         <p><input type = "radio" name = "os" value = "Windows">Windows
+            <input type = "radio" name = "os" value = "Mac OS X">Mac OS X
+            <input type = "radio" name = "os" value = "Linux">Linux
+            <input type = "radio" name = "os" value = "Other">Other
+		</p>
+
+         <!-- create a submit button -->
+         <p><input type = "submit" name = "submit" value = "Register"> &nbsp;&nbsp;
+		 <input type = "reset" name = "reset" value = "Reset">
+		 </p>
+      </form>
+   </body>
+</html>
+
