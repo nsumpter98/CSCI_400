@@ -73,15 +73,15 @@ if (isset($_POST['send'])) {
     }
 
     if (!$inputError) {//send the email
-        $to = "awny@iuk.edu";
+        $to = "nsumpter98@gmail.com";
         $subject = "New Application";
         $message = $_POST["name"] . " " . " has submitted his application as follows .....";
         //optional headers argument
-        $headers = "From: Webmaster@MySite.com\r\n";
+        $headers = "From: joebob12001@gmail.com\r\n";
         $headers .= "Content-Type text/plain; charset= utf-8\r\n";
-        $headers .= "Cc: awny@gmail.com";
-        //$result = mail($to, $subject, $message, $headers);
-        if (TRUE) {
+       // $headers .= "Cc: awny@gmail.com";
+        $result = mail($to, $subject, $message, $headers);
+        if ($result) {
             echo "<strong>Your application form was successfully sent to</strong> " . $to;
             $displayForm = FALSE;
         } else {
