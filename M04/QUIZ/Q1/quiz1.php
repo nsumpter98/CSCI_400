@@ -26,8 +26,7 @@ $daysFrench = array(
  */
 function checkInput($input): bool
 {
-    //TODO: only allow Day 1-7 if there is a space after or before Day
-    return preg_match("/Day\s[1-7]/", $input);
+    return preg_match("/^Day\s[1-7]$/", $input);
 }
 
 /**
@@ -60,7 +59,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $input = $preload["input"];
 
-    $payload = translate($input);
+    $payload = translate(trim($input));
 
     echo $payload;
 }
