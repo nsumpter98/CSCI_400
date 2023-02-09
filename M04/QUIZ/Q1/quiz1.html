@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Quiz 1</title>
+    <link rel="stylesheet" href="../../../STATIC/BOOTSTRAP/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="CSS/index.css" type="text/css">
+</head>
+<body class="bg-body-secondary">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand text-white" href="#">Quiz 1</a>
+
+    </div>
+</nav>
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-lg-6 mx-auto">
+            <div class="card bg-body-tertiary shadow">
+                <div class="card-header">
+                    <h5>Day Of Week</h5>
+                </div>
+                <form id="dayForm">
+                    <div class="form-group">
+                        <label for="day" class="form-label">Enter the day of the week you were born (ex: Day 3):</label>
+                        <div class="input-group input-group-sm mb-3">
+                            <span class="input-group-text" id="inputGroup-sizing-sm">Day</span>
+                            <input type="text" name="day" class="form-control" id="day" aria-describedby="day"
+                                   placeholder="Enter Day">
+                        </div>
+                    </div>
+                    <!--submit button-->
+                    <button type="submit" id="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
+                </form>
+                <div class="card-footer">
+                    <p id="response"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="bg-dark text-white text-center">
+    <p>© 2023 - Quiz 1 - <code><i class="text-white">Nathanael Sumpter</i></code></p>
+    <script src="JS/index.js" type="module"></script>
+</footer>
+</body>
+</html>

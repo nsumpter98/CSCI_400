@@ -1,0 +1,15 @@
+form{
+    padding: 1rem;
+}
+
+footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    max-height: 1.5rem;
+}
+
+.navbar{
+    margin-bottom: 2rem;
+}
+
