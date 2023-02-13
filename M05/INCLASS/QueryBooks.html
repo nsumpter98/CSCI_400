@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<!-- QueryBooks.html -->
+<!-- Form to query a MySQL database. -->
+
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <title>Sample Database Query Via Form</title>
+   </head>
+   <body>
+      <h1>Query the books database:</h1>
+      <form method = "post" action = "booksdb_lab_p1.php">
+         <p><strong>Option 1</strong>: Select a field to display current book inventory: 
+            <select name = "bookselection">                   
+               <option value="Select" selected>Select</option>
+			   <option value="*">All fields</option>
+               <option value="ID">IDs Only</option>                     
+               <option value="Title">Titles Only</option>                  
+               <option value="Category">Categories Only</option>               
+               <option value="ISBN">ISBNs Only</option>                   
+            </select>
+		</p>
+         <p><input type = "submit" value = "Send Query"></p>
+      </form>
+   </body>
+</html>
