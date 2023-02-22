@@ -5,13 +5,7 @@
 require_once('../../STATIC/TOOLS/DB/dbConn.php');
 
 
-try{
-    $conn = connect_to_database();
-
-}catch (PDOException $e) {
-    echo "Connection failed: " . $e->getMessage();
-}
-
+$conn = connect_to_database();
 
 
 
@@ -46,10 +40,9 @@ function processData($data): array
         }
 
     } elseif($table['table'] === 'authors') {
-        $conn = connect_to_database();
         $query = "SELECT books.Title, authors.Name FROM books, authors, books_authors WHERE books.ID = books_authors.BID AND authors.ID = books_authors.AID AND authors.Name = '{$dropdownValue['dropdownValue']}'";
     }else{
-        echo 'Error';
+        echo json_encode(array('error' => 'Invalid table name'));
     }
 
 

@@ -9,7 +9,6 @@ function dynamicAJAX(url, payload, method, callback) {
         }
     }
 
-    console.log(payload);
 
     xhr.send(JSON.stringify(payload));
 
