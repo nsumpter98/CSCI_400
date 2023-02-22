@@ -86,7 +86,6 @@ if (isset($_POST['addbook'])) {
         !empty ($isbn_error) || !empty ($price_error) || !empty ($author_error))
         $inputError = true;
     //===========================================================================
-    echo $inputError;
     if ($inputError == false) {
         //Write your code below to insert into the books with a confirmation messages if insert was successful:
         $book_insert = "INSERT INTO books (ID, Title, Category, ISBN, Price) 
