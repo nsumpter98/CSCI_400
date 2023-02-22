@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Lab 3</title>
+    <link rel="stylesheet" href="../../STATIC/BOOTSTRAP/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="CSS/index.css" type="text/css">
+</head>
+<body class="bg-body-secondary">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand text-white" href="#">Quiz 1</a>
+
+    </div>
+</nav>
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-lg-6 mx-auto">
+            <div class="card bg-body-tertiary shadow">
+                <div class="card-header">
+                    <h5>Two options to query the books database</h5>
+                </div>
+                <form id="sqlForm" method="post">
+                    <div class="form-group">
+                        <label for="books" class="form-label"><b>Option 1:</b> Select a field to display current book inventory: </label>
+                        <div class="input-group input-group-sm mb-3">
+                            <span class="input-group-text" id="inputGroup-sizing-sm">Select</span>
+                            <select class="form-select" name="book" id="books" aria-label="Default select example">
+                                <option selected value="0">Choose...</option>
+                                <option value="1">All fields</option>
+                                <option value="2">IDs</option>
+                                <option value="3">Title</option>
+                                <option value="4">Category</option>
+                                <option value="5">Price</option>
+                            </select>
+
+                        </div>
+                        <label for="authors" class="form-label"><b>Option 2:</b> Select an author to display his/her books:
+                        </label>
+                        <div class="input-group input-group-sm mb-3">
+                            <span class="input-group-text">Select</span>
+                            <select class="form-select" name="author" id="authors" aria-label="Default select example">
+                                <option selected value="0">Choose...</option>
+                                <option value="Paul Deitel">Paul Deitel</option>
+                                <option value="John Ulman">John Ulman</option>
+                                <option value="Johny Scott">Johny Scott</option>
+                                <option value="Scott Davis">Scott Davis</option>
+                                <option value="Norman Finkelstein">Norman Finkelstein</option>
+                                <option value="Tom Davis">Tom Davis</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!--submit button-->
+                    <button type="submit" id="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
+                </form>
+                <div class="card-footer">
+                    <p id="response"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="bg-dark text-white text-center">
+    <p>© 2023 - Quiz 1 - <code><i class="text-white">Nathanael Sumpter</i></code></p>
+    <script src="JS/index.js" type="module"></script>
+</footer>
+</body>
+</html>
