@@ -1,0 +1,23 @@
+form{
+    padding: 1rem;
+}
+
+footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    max-height: 1.5rem;
+}
+
+.navbar{
+    margin-bottom: 2rem;
+}
+
+.card{
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8.1px);
+    -webkit-backdrop-filter: blur(8.1px);
+    border: 1px solid rgba(123, 121, 121, 0.03);
+}
