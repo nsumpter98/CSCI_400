@@ -1,0 +1,7 @@
+CREATE TABLE people
+(
+    ID    INT         NOT NULL AUTO_INCREMENT,
+    fname VARCHAR(50) NOT NULL,
+    lname VARCHAR(50) NOT NULL,
+    PRIMARY KEY (ID)
+);
