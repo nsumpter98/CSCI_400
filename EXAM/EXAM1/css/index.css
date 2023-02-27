@@ -1,23 +1,139 @@
-form{
-    padding: 1rem;
+html, body {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+
 }
 
-footer{
-    position: fixed;
-    bottom: 0;
+form {
+    border: 2px solid #ccc;
+    padding: 10px;
+    border-radius: 10px;
+
+}
+
+
+
+.form-label {
+    font-weight: bold;
+}
+
+.form-control:focus {
+    border-color: #6c757d;
+    box-shadow: 0 0 0 0.2rem rgba(108, 117, 125, 0.25);
+}
+
+button {
+    background-color: #007bff;
+    border-color: #007bff;
+    border-radius: 5px;
+    font-size: 18px;
+    padding: 10px 20px;
+}
+
+button:hover {
+    background-color: #0069d9;
+    border-color: #0062cc;
+}
+
+button:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
+}
+
+.Full_width {
+    display: flex;
+    align-items: center;
+    min-height: 100%;
+}
+
+.Full_width .set,
+.Full_width .duble_Set {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+
+}
+
+.duble_Set img {
     width: 100%;
-    max-height: 1.5rem;
+    height: 100vh; /* set the height to 100vh */
 }
 
-.navbar{
-    margin-bottom: 2rem;
+.duble_Set{
+    background-image: url('../../../STATIC/IMG/landscape.jpg');
+    background-size: 100% 100%; /* set background size to cover the entire element */
+    background-repeat: no-repeat;
+    background-position: center;
+
+    width: 100%;
+    height: 100vh;
 }
 
-.card{
-    background: white;
+
+
+
+
+
+
+
+
+label {
+    display: flex;
+    flex-direction: column;
+    text-transform: capitalize;
+}
+
+.card {
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.14);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(8.1px);
-    -webkit-backdrop-filter: blur(8.1px);
-    border: 1px solid rgba(123, 121, 121, 0.03);
+    backdrop-filter: blur(19.6px);
+    -webkit-backdrop-filter: blur(19.6px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    margin: 20px;
+
+}
+
+.container {
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.error{
+    border: 2px solid red;
+}
+
+.error:focus{
+    border: 2px solid red;
+}
+
+.success{
+    border: 2px solid green;
+}
+
+.success:focus{
+    border: 2px solid green;
+}
+
+
+@media screen and (max-width: 768px) {
+    /* CSS rules for smaller screens */
+    .card {
+        margin-top: 20px;
+    }
+    .card-body {
+        padding: 20px;
+    }
+
+    .Full_width {
+        flex-direction: column;
+    }
+
+    .Full_width .set,
+    .Full_width .duble_Set {
+        width: 100%;
+    }
 }

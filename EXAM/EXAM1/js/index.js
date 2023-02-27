@@ -1,104 +1,94 @@
 import {dynamicAJAX} from "../../../STATIC/TOOLS/JS/dynamicAJAX.js";
 
-//going to validate the table name on the serverside to prevent sql injection
-let currentlySelected = "";
-let ok = false;
 
-document.getElementById("books").addEventListener("change", function (e) {
-    document.getElementById("authors").value = 0;
-    currentlySelected = "books";
-    ok = true;
-});
+function clearValidationStyles(inputId) {
+    const input = document.getElementById(inputId);
+    input.classList.remove('error');
+    input.classList.remove('success');
+}
 
-document.getElementById("authors").addEventListener("change", function (e) {
-    document.getElementById("books").value = 0;
-    currentlySelected = "authors";
-    ok = true;
-});
-
-
-let form = document.getElementById("sqlForm");
-
-function generateTable(result) {
-    //remove any existing table
-    if (document.getElementById("resultsTable")) {
-        document.getElementById("resultsTable").remove();
-    }
-
-
-    let table = document.createElement("table");
-    table.setAttribute("id", "resultsTable");
-    table.setAttribute("class", "table table-striped")
-    document.getElementById("response").appendChild(table);
-
-    //create table header
-    let header = document.createElement("tr");
-    header.setAttribute("id", "header");
-    header.setAttribute("class", "thead-dark");
-    document.getElementById("resultsTable").appendChild(header);
-
-    //create table body
-    let body = document.createElement("tbody");
-    body.setAttribute("id", "body");
-    body.setAttribute("class", "table-striped");
-    document.getElementById("resultsTable").appendChild(body);
-
-    //create table footer
-    let footer = document.createElement("tr");
-    footer.setAttribute("id", "footer");
-    footer.setAttribute("class", "thead-dark");
-    document.getElementById("resultsTable").appendChild(footer);
-
-    //create table header cells
-    let headerCells = [];
-    for (let i = 0; i < Object.keys(result[0]).length; i++) {
-        headerCells[i] = document.createElement("th");
-        headerCells[i].innerHTML = Object.keys(result[0])[i];
-        document.getElementById("header").appendChild(headerCells[i]);
-    }
-
-    //create table body rows
-    let bodyRows = [];
-    for (let i = 0; i < result.length; i++) {
-        bodyRows[i] = document.createElement("tr");
-        bodyRows[i].setAttribute("id", "row" + i);
-        document.getElementById("body").appendChild(bodyRows[i]);
-    }
-
-    //create table body cells
-    let bodyCells = [];
-    for (let i = 0; i < result.length; i++) {
-        for (let j = 0; j < Object.keys(result[0]).length; j++) {
-            bodyCells[j] = document.createElement("td");
-            bodyCells[j].innerHTML = Object.values(result[i])[j];
-            document.getElementById("row" + i).appendChild(bodyCells[j]);
-        }
-    }
-
-
+function showValidationError(inputId, message) {
+    const input = document.getElementById(inputId);
+    input.classList.remove('success');
+    input.classList.add('error');
 
 }
 
-form.addEventListener("submit", function (e) {
-    e.preventDefault();
 
-    if (ok) {
+//fill table
+function fillTable(data) {
 
-        let input = document.getElementById(currentlySelected).value;
-
-
-        dynamicAJAX(
-            "lab3.php",
-            {input: {table: currentlySelected, dropdownValue: input}},
-            "POST",
-            function (response) {
-                response = JSON.parse(response);
-                console.log(response);
-
-                generateTable(response.result);
-            }
-        );
+    //append rows to existing table
+    let tbody = document.getElementById('tbody');
+    for (let i = 0; i < data.length; i++) {
+        let row = document.createElement('tr');
+        let fname = document.createElement('td');
+        let lname = document.createElement('td');
+        fname.innerHTML = data[i].fname;
+        lname.innerHTML = data[i].lname;
+        lname.setAttribute('class', 'text-white');
+        fname.setAttribute('class', 'text-white');
+        row.appendChild(fname);
+        row.appendChild(lname);
+        tbody.appendChild(row);
     }
+}
+
+
+//onload
+window.onload = function () {
+    dynamicAJAX('exam1.php', {}, 'GET', function (response) {
+        console.log(JSON.parse(response));
+        fillTable(JSON.parse(response));
+    });
+}
+
+//form submit event listener
+let form = document.getElementById('form');
+form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    console.log('form submitted');
+    let payload = [{fname: document.getElementById('fname').value, lname: document.getElementById('lname').value}];
+    console.log(JSON.stringify(payload));
+
+    dynamicAJAX('exam1.php', payload, 'POST', function (response) {
+        console.log(response);
+        let json = JSON.parse(response);
+
+        if (json.response.code === 'success') {
+            fillTable(payload);
+            // Reset form
+            form.reset();
+
+            // Clear validation styles
+            clearValidationStyles('fname');
+            clearValidationStyles('lname');
+
+            // Refocus on fname input
+            document.getElementById('fname').focus();
+        } else {
+            if (json.response.code === 'fnameerr') {
+                // Show validation error for fname input
+                showValidationError('fname', 'Please enter a valid first name.');
+                document.getElementById('fname').focus();
+            } else {
+                // Clear validation error for fname input
+                clearValidationStyles('fname');
+            }
+
+            if (json.response.code === 'lnameerr') {
+                // Show validation error for lname input
+                showValidationError('lname', 'Please enter a valid last name.');
+                document.getElementById('lname').focus();
+            } else {
+                // Clear validation error for lname input
+                clearValidationStyles('lname');
+            }
+        }
+
+
+    });
 
 
 });
+

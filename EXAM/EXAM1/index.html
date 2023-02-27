@@ -10,21 +10,77 @@
     <title>Exam 1</title>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
-        <a class="navbar-brand text-white" href="#">Exam 1</a>
-    </div>
-</nav>
+<div class="Full_width">
+    <div class="duble_Set overflow-auto shadow-lg z-3 text-white">
+        <div class="container">
+            <div class="grid">
+                <div class="row">
+                    <div class="col-md-12 col-sm-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h2>Exam 1</h2>
+                                <p>• Both First and Last name are required fields. Use simple a regular expression to
+                                    validate the name fields. Ideally the name should consist of letters only.
+                                    <br><br>• Displaying the results: once the user clicks on the "Show Guests" link,
+                                    your
+                                    code will invoke another PHP script that displays the guestbook in a nicely
+                                    formatted HTML table.</p>
+                                <p><i>Nathanael Sumpter</i></p>
+                            </div>
+                        </div>
+                    </div>
 
-<div class="container">
-    <div class="card">
-        <div class="card-body">
-            <h5 class="card-title">Card Title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 col-sm-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h1>Guests</h1>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-striped table-hover shadow" id="table">
+                                        <thead class="thead-light text-white">
+                                        <tr>
+                                            <th>First Name</th>
+                                            <th>Last Name</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody id="tbody">
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+    <div class="set">
+        <div class="card">
+            <div class="card-header">
+                <h1>Guestbook</h1>
+            </div>
+            <div class="card-body">
+                <form class="m-2" id="form" method="post">
+                    <div class="row mb-3">
+                        <div class="col">
+                            <label for="fname" class="form-label">First Name</label>
+                            <input type="text" class="form-control" id="fname" placeholder="Enter your first name">
+                        </div>
+                        <div class="col">
+                            <label for="lname" class="form-label">Last Name</label>
+                            <input type="text" class="form-control" id="lname" placeholder="Enter your last name">
+                        </div>
+                    </div>
+                    <button type="submit" id="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
 </div>
-
-
+<script src="js/index.js" type="module"></script>
 </body>
 </html>
