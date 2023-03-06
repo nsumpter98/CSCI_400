@@ -6,7 +6,7 @@ try {
 } catch (PDOException $e) {
     die("Fatal Error - Could not connect to the database" . "</body></html>");
 }
-
+/*test*/
 /*$query = "CREATE TABLE users (
   forename VARCHAR(32) NOT NULL,
   surname  VARCHAR(32) NOT NULL,
