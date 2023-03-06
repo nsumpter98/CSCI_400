@@ -14,8 +14,8 @@
   if (isset($_SERVER['PHP_AUTH_USER']) &&
       isset($_SERVER['PHP_AUTH_PW'])) {
     
-	$un_temp = sanitise($pdo, $_SERVER['PHP_AUTH_USER']);
-    $pw_temp = sanitise($pdo, $_SERVER['PHP_AUTH_PW']);
+	$un_temp = sanitise($pdo, 'bsmith');
+    $pw_temp = sanitise($pdo, 'mysecret');
     $query   = "SELECT * FROM users WHERE username=$un_temp";
     $result  = $pdo->query($query);
 
