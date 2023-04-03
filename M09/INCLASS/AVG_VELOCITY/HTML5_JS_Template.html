@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Javascript template</title>
+        <script>
+            //Average Velocity = ( X2-X1) / (T2-T1)
+            let avgVelocity = (X2, X1, T2, T1) => (X2 - X1) / (T2 - T1);
+        </script>
+    </head>
+
+    <body>
+        <h1>Sample HTML5 page with Javascript</h1>
+        <p id="velocity"></p>
+
+        <script>
+            document.getElementById("velocity").innerHTML = avgVelocity(10, 0, 10, 0);
+        </script>
+    </body>
+</html>
+

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!-- 
+A demo example that shows how you add JavaScrip code to your HTML document. 
+It also explains some JavaScript features such as inputs/outpts, formatting, 
+using CSS, and rounding 
+ -->
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <title>A First Program in JavaScript</title>
+
+      <script>
+		 //Getting user's input via a prompt
+		 var name = window.prompt("Enter your name", "" );
+         var gpa = parseFloat(window.prompt("Enter your GPA", "0" ));
+		 
+		 //Using alerts and writeln to produce output:
+         window.alert("Hello " + name + "\nThe GPA you entered is: " + gpa);
+         document.writeln("<p>Welcome to JavaScript </p>" );
+         document.writeln("<strong>Hello" + " World!</strong>" );
+      </script>
+	  
+	  <script src="external.js">
+      </script>
+
+   </head>
+   <body>
+   	 <h3>Practicing with JavaScript</h3>
+   		 <!-- Inline Scripting -->
+         <script>
+			//Using CSS within Javascript text:
+            document.writeln("<h2 style= \"color:red\"> My first JavaScript program! </h2>" );
+			var newString = "<strong style=\"text-decoration:underline;\">Bolded and Underlined</strong>";
+			document.writeln(newString);
+
+			document.writeln( "<pre>" );
+			document.writeln("JavaScript is" );
+			document.write("a" );
+			document.write(" cool language!" );
+			document.writeln( "</pre>" );
+      </script>
+   </body>
+</html>
+
+
