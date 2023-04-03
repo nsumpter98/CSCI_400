@@ -13,27 +13,26 @@ try {
 
 
 
-//create new address
+    //create new address
     $address = new Address("123 Main St", "", "Anytown", "NY", "12345");
     $address2 = new Address("456 Main St", "", "Anytown", "NY", "12345");
 
-//create new car owner
+    //create new car owner
     $carOwner = new CarOwner("John Doe", $address);
     $carOwner2 = new CarOwner("Jane Doe", $address2);
     $carOwner3 = new CarOwner("John Doe", $address2);
 
-//create new SportsCar
+    //create new SportsCar
     $sportsCar = new SportsCar("Ford", "Mustang", 2019, "123456789", $carOwner, "400", "400", "150");
     $sportsCar2 = new SportsCar("Ford", "Mustang", 2019, "123456789", $carOwner2, "400", "400", "150");
     $sportsCar3 = new SportsCar("Ford", "Mustang", 2019, "123456789", $carOwner2, "400", "400", "150");
 
-//create new SedanCar
+    //create new SedanCar
     $sedanCar = new SedanCar("Ford", "Fusion", 2019, "123456789", $carOwner, "4", "400");
     $sedanCar2 = new SedanCar("Ford", "Fusion", 2019, "123456789", $carOwner2, "4", "400");
     $sedanCar3 = new SedanCar("Ford", "Fusion", 2019, "123456789", $carOwner2, "4", "400");
 
 
-    //echo all objects with formatted descriptions
     echo "--------------------------\n";
     echo "Sports Cars:\n";
     echo "--------------------------\n";
@@ -48,7 +47,6 @@ try {
     echo $sedanCar2 . "\n";
     echo $sedanCar3 . "\n";
 
-    //echo all objects with formatted descriptions
     echo "--------------------------\n";
     echo "Owners:\n";
     echo "--------------------------\n";
@@ -59,7 +57,6 @@ try {
     echo $sedanCar2->getOwner() . "\n";
     echo $sedanCar3->getOwner() . "\n";
 
-    //echo all objects with formatted descriptions
     echo "--------------------------\n";
     echo "Addresses:\n";
     echo "--------------------------\n";
