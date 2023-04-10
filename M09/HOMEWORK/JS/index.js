@@ -15,11 +15,11 @@ function calculateActivity(hours, activity) {
         case "swimming":
             pounds = calculateWeightLost(hours, 275);
             break;
-        case "running":
-            pounds = calculateWeightLost(hours, 275);
+        case "jogging":
+            pounds = calculateWeightLost(hours, 475);
             break;
         case "cycling":
-            pounds = calculateWeightLost(hours, 275);
+            pounds = calculateWeightLost(hours, 200);
             break;
         default:
             pounds = 0;
@@ -85,3 +85,41 @@ function loopGrades() {
         average = prompt("Enter average");
     }
 }
+
+
+/*
+form event listeners based on form id with switch case
+ */
+
+document.getElementById("weightcalc").addEventListener("submit", function (event) {
+    event.preventDefault();
+    var hours = document.getElementById("hours").value;
+    var activity = document.getElementById("activity").value;
+    var pounds = calculateActivity(hours, activity);
+    document.getElementById("weightlostResult").innerHTML = pounds;
+});
+
+
+document.getElementById('submitBtn').addEventListener('click', function(event) {
+    event.preventDefault(); // prevent the form from submitting
+    var day = document.getElementById('dayInput').value;
+    var message = getDayMessage(day);
+    document.getElementById('message').textContent = message;
+
+});
+
+document.getElementById('submitBtn1').addEventListener('click', function(event) {
+    event.preventDefault(); // prevent the form from submitting
+
+    var year = document.getElementById('yearInput').value;
+    var tuition = getTuition(year);
+    document.getElementById('tuition').textContent = "Tuition for year " + year + " is $" + tuition.toFixed(2);
+});
+
+document.getElementById('submitBtn2').addEventListener('click', function(event) {
+    event.preventDefault(); // prevent the form from submitting
+
+    var average = document.getElementById('averageInput').value;
+    var grade = getGrade(average);
+    document.getElementById('grade').textContent = "Grade: " + grade;
+});

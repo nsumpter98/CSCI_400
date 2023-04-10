@@ -8,20 +8,7 @@
 </head>
 <body>
 <nav class="nav">
-    <ul class="nav nav-tabs">
-        <li class="nav-item">
-            <a class="nav-link active" href="#">Active</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link disabled" href="#">Disabled</a>
-        </li>
-    </ul>
+
 </nav>
 
 <div class="container">
@@ -30,13 +17,73 @@
             <div class="col-12 col-lg-6 mx-auto">
                 <div class="card bg-body-tertiary shadow">
                     <div class="card-header">
-                        <h5>Javascript functions</h5>
+                        <h5>Calories</h5>
                     </div>
                     <div class="card-body">
+                        <form id="weightcalc">
+                            <label for="hours">Hours</label>
+                            <input type="number" id="hours" name="hours" placeholder="Hours" required>
+                            <label for="activity">Activity</label>
+                            <select id="activity" name="activity" required>
+                                <option value="swimming">Swimming</option>
+                                <option value="jogging">Jogging</option>
+                                <option value="cycling">Cycling</option>
+                            </select>
+                            <button class="submit" name="submit">
+                                <span>Submit</span>
+                            </button>
+                        </form>
                         <div class="results">
-                            <p id="response">this is a test</p>
-
+                            <h1 id="weightlostResult"></h1>
                         </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-6 mx-auto">
+                <div class="card bg-body-tertiary shadow">
+                    <div class="card-header">
+                        <h5>Day of month</h5>
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <label for="dayInput">Enter a day number:</label>
+                            <input type="number" id="dayInput" name="dayInput">
+                            <button type="submit" id="submitBtn">Get Day Message</button>
+                        </form>
+
+                        <div id="message"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-6 mx-auto">
+                <div class="card bg-body-tertiary shadow">
+                    <div class="card-header">
+                        <h5>Tuition Calc</h5>
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <label for="yearInput">Enter a year:</label>
+                            <input type="number" id="yearInput" name="yearInput">
+                            <button type="submit" id="submitBtn1">Get Tuition</button>
+                        </form>
+
+                        <div id="tuition"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-6 mx-auto">
+                <div class="card bg-body-tertiary shadow">
+                    <div class="card-header">
+                        <h5>Grade Calc</h5>
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <label for="averageInput">Enter an average:</label>
+                            <input type="number" id="averageInput" name="averageInput">
+                            <button type="submit" id="submitBtn2">Get Grade</button>
+                        </form>
+
+                        <div id="grade"></div>
                     </div>
                 </div>
             </div>
