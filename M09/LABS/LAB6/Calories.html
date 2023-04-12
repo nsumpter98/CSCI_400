@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Calorie Calculator</title>
+    <!-- <link href="styles.css" rel="stylesheet" type="text/css">-->
+    <link rel="stylesheet" href="../../../STATIC/BOOTSTRAP/css/bootstrap.min.css" type="text/css">
+</head>
+
+<body>
+<div class="card">
+    <div class="card-header">
+        <h5>Calories</h5>
+    </div>
+    <div class="card-body">
+        <form id="weightcalc">
+
+            <label for="activity">Swimming</label>
+            <input type="text" id="swimming" name="swimming" placeholder="Swimming" required>
+            <br>
+            <label for="activity">Jogging</label>
+            <input type="text" id="jogging" name="jogging" placeholder="Jogging" required>
+            <br>
+            <label for="activity">Cycling</label>
+            <input type="text" id="cycling" name="cycling" placeholder="Cycling" required>
+            <!--<select id="activity" name="activity" required>
+                <option value="swimming">Swimming</option>
+                <option value="jogging">Jogging</option>
+                <option value="cycling">Cycling</option>
+            </select>-->
+            <button class="submit" name="submit">
+                <span>Submit</span>
+            </button>
+        </form>
+        <div class="results">
+            <h1 id="weightlostResult"></h1>
+        </div>
+    </div>
+    <div class="card-footer">
+        <h1 id="weightlostResult"></h1>
+    </div>
+</div>
+
+
+<footer>
+    <script src="lab3.js"></script>
+</footer>
+
+</body>
+</html>
