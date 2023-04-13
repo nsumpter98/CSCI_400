@@ -4,43 +4,20 @@ function calculateWeightLost(hours, caloriesBurned) {
     return {pounds: pounds, calories: calories};
 }
 
-
-function calculateActivity(hours, activity) {
-    let result = {pounds: 0, calories: 0}
-    switch (activity) {
-        case "swimming":
-            result = calculateWeightLost(hours, 275);
-            break;
-        case "jogging":
-            result = calculateWeightLost(hours, 475);
-            break;
-        case "cycling":
-            result = calculateWeightLost(hours, 200);
-            break;
-        default:
-            result = {pounds: 0, calories: 0};
-    }
-    return result;
-}
-
-
 document.getElementById("weightcalc").addEventListener("submit", function (event) {
     event.preventDefault();
-    var swimming = document.getElementById("swimming").value;
-    var jogging = document.getElementById("jogging").value;
-    var cycling = document.getElementById("cycling").value;
 
     const activities = [
-        { fn: swimming, name: 'swimming' },
-        { fn: jogging, name: 'jogging' },
-        { fn: cycling, name: 'cycling' },
+        { fn: event.target.swimming.value, caloriesBurned: 275 },
+        { fn: event.target.jogging.value, caloriesBurned: 475 },
+        { fn: event.target.cycling.value, caloriesBurned: 200 },
     ];
 
     let pounds = 0;
     let calories = 0;
 
-    for (const { fn, name } of activities) {
-        const result = calculateActivity(fn, name);
+    for (const { fn, caloriesBurned } of activities) {
+        let result = calculateWeightLost(fn, caloriesBurned);
         pounds += result.pounds;
         calories += result.calories;
     }
