@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!--
+Using the String object
+-->
+<html>
+   <head>
+		<meta charset = "utf-8" />
+		<title>String Methods</title>
+
+<pre>
+<script>
+	/*
+	The string object has properties such as:
+
+	Ex. var msg = "Hello there!";
+
+	1.length: returns the length of the string.
+		document.write(msg.length);
+	
+	The string object has methods such as:
+	1.toUpperCase() and toLowerCase()
+		document.write(msg.toUpperCase());
+	2.substring(start, end): returns a string which is a portion of another string.
+		document.write(msg.substring(0,4)); //returns a string from 'start' up to but not including 'end'
+			displays(Hell)
+		document.write(msg.substring(3,6));
+			display (lo)
+	3. indexOf(substring, index):
+ 	Used whenever you want to perform a search on a string, this method returns the position
+ 	number (index) of the search character if found. If it was not found , it will return -1.
+ 	The syntax of the function is : indexOf(substring,index) where substring is the text string
+ 	and index is the position in the string where you need to start the search.
+	
+	4.charAt() method returns the character at the specified index in a string.
+	
+	Complete list of the methods in the String object are in the book
+
+	*/
+	var msg = "JavaScript World!";
+
+	document.writeln("Original String: " + msg);
+	document.writeln("Length: " + msg.length);
+	document.writeln("toUpperCase: " + msg.toUpperCase());
+	document.writeln("substring(2,6): " + msg.substring(2,6));
+	document.writeln("indexOf ('s', 0): " + msg.indexOf ('s', 0));
+	document.writeln("indexOf ('S', 0): " + msg.indexOf ('S', 0));
+	document.writeln("charAt(1): " + msg.charAt (1));
+
+</script>
+</pre>
+
+</head>
+
+
+<body>
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<!-- Online Dog types quiz graded with JavaScript. -->
+
+<html>
+   <head>
+      <meta charset = "utf-8" />
+      <title>Dog Types Quiz</title>
+
+   </head>
+   <body>
+      <form id = "dogQuiz" action = "http://www.bing.com">
+         <p style="color:#9C5959; font-weight:bold;">Select the correct type of the dog that goes with the image:</p>
+		 <p><strong>Dog 1:</strong><br />
+            <img src="dog1.jpg" alt="mystery dog"/>
+            <br />
+
+            <input type = "radio" name = "dog1" id = "akita" value="akita" />
+            <label>Akita</label>
+
+            <input type = "radio" name = "dog1" id = "bloodhound" value="bloodhound" />
+            <label>Bloodhound</label>
+
+            <input type = "radio" name = "dog1" id = "borzoi" value="borzoi" />
+            <label>Borzoi</label>
+			
+            <input type = "radio" name = "dog1" id = "affenpinscher" value="affenpinscher" />
+            <label>Affenpinscher</label>
+		   </p>
+         <h2 id = "dog1Answer"></h2>
+
+		   
+		   <p><strong>Dog 2:</strong><br />
+            <img src="dog2.jpg" alt="mystery dog"/>
+            <br />
+
+            <input type = "radio" name = "dog2" id = "basenji" value="basenji" />
+            <label>Basenji</label>
+
+            <input type = "radio" name = "dog2" id = "bostonterrier" value="bostonterrier" />
+            <label>Boston Terrier</label>
+
+            <input type = "radio" name = "dog2" id = "boxer" value="boxer" />
+            <label>Boxer</label>
+			
+            <input type = "radio" name = "dog2" id = "beagle" value="beagle" />
+            <label>Beagle</label>
+		   </p>
+         <h2 id = "dog2Answer"></h2>
+
+            <input type = "submit" value = "Check My Answers!" />
+            <input type = "reset" name = "reset" value = "Reset" />
+
+      </form>
+   <script src="dogs.js"></script>
+   </body>
+</html>
+
