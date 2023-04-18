@@ -1,68 +1,120 @@
 <!DOCTYPE html>
 <html>
-   <head>
-      <meta charset = "utf-8" />
-		<title>Catalog Ordering</title>
-		<style type = "text/css">
-			.red, .error	{	color:red;	}
-			.green	{	color:green;	}
-			.underlined	{	text-decoration:underline;	}
-		</style>
-		<script>
-		/*
-		Validation requirements:
-		1- All fields are required
-		2- Name field must have a space between first name and last name
-		3- Phone number must contain exactly ten digits. Use the following RE:
-		   /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/
-		4- Email address must contain the @ sign
-		/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/
-		*/
+<head>
+    <meta charset="utf-8"/>
+    <title>Catalog Ordering</title>
+    <style type="text/css">
+        .red, .error {
+            color: red;
+        }
 
-		</script>
-	  
-	</head>
+        .green {
+            color: green;
+        }
 
-	<body>
-		<h1 class = "red underlined">To order our catalog:</h1>
-		<hr />
-		<p class = "green">Please fill out the fields below to order our FREE CATALOG. Press the submit button at the end of the form when done.
-		</p>
-		<hr />
-		<form id = "myForm" onsubmit = "return validate();" >
-			<table>
-				<tr>
-					<td>Your Name <em>(first last)</em>:</td>
-					<td><input type = "text" id = "name" /></td>
-					<td id = "name_error" class = "error"></td>
-				</tr>
-				<tr>
-					<td>Your Phone Number:</td>
-					<td><input type = "text" id = "phone" /></td>
-					<td id = "phone_error" class = "error"></td>
-				</tr>
-				<tr>
-					<td>Your E-mail Address:</td>
-					<td><input type = "text" id = "email" /></td>
-					<td id = "email_error" class = "error"></td>
-				</tr>
-				<tr>
-					<td>Your Mailing Address:</td>
-					<td><input type = "text" id = "address" /></td>
-					<td id = "address_error" class = "error"></td>
-				</tr>
-				<tr>
-					<td>Your Current Position:</td>
-					<td><input type = "text" id = "position" /></td>
-					<td id = "position_error" class = "error"></td>
-				</tr>
-				<tr>
-					<td>
-						<input type = "submit" value = "Submit" />
-						<input type = "reset" value = "Start Over" />
-					</td>
-				</tr>
-			</table>
-		</form>
-	</body>
+        .underlined {
+            text-decoration: underline;
+        }
+    </style>
+    <script>
+        let json = {
+            "form": [
+                {
+                    "field": "name",
+                    "label": "Your Name",
+                    "hint": "first last",
+                    "required": true,
+                    "validation": "name",
+                    "type": "text"
+                },
+                {
+                    "field": "phone",
+                    "label": "Your Phone Number",
+                    "hint": "xxx-xxx-xxxx",
+                    "required": true,
+                    "validation": "phone",
+                    "type": "text"
+                },
+            ]
+        }
+
+        //a form that dynamically builds a form according to a json input
+        function dynamicFormBuilder(json, domLocation) {
+            let form = document.createElement("form");
+            let formFields = json.form;
+            for (let i = 0; i < formFields.length; i++) {
+                let field = formFields[i];
+                let label = document.createElement("label");
+                label.innerHTML = field.label;
+                let input = document.createElement("input");
+                input.setAttribute("type", field.type);
+                input.setAttribute("name", field.field);
+                input.setAttribute("placeholder", field.hint);
+                input.setAttribute("required", field.required);
+                input.setAttribute("validation", field.validation);
+                form.appendChild(label);
+                form.appendChild(input);
+            }
+            domLocation.appendChild(form);
+        }
+
+
+
+        /*
+        Validation requirements:
+        1- All fields are required
+        2- Name field must have a space between first name and last name
+        3- Phone number must contain exactly ten digits. Use the following RE:
+           /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/
+        4- Email address must contain the @ sign
+        /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/
+        */
+
+    </script>
+
+</head>
+
+<body>
+<h1 class="red underlined">To order our catalog:</h1>
+<hr/>
+<p class="green">Please fill out the fields below to order our FREE CATALOG. Press the submit button at the end of the
+    form when done.
+</p>
+<hr/>
+<form id="myForm" onsubmit="return validate();">
+    <table>
+        <tr>
+            <td>Your Name <em>(first last)</em>:</td>
+            <td><input type="text" id="name"/></td>
+            <td id="name_error" class="error"></td>
+        </tr>
+        <tr>
+            <td>Your Phone Number:</td>
+            <td><input type="text" id="phone"/></td>
+            <td id="phone_error" class="error"></td>
+        </tr>
+        <tr>
+            <td>Your E-mail Address:</td>
+            <td><input type="text" id="email"/></td>
+            <td id="email_error" class="error"></td>
+        </tr>
+        <tr>
+            <td>Your Mailing Address:</td>
+            <td><input type="text" id="address"/></td>
+            <td id="address_error" class="error"></td>
+        </tr>
+        <tr>
+            <td>Your Current Position:</td>
+            <td><input type="text" id="position"/></td>
+            <td id="position_error" class="error"></td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" value="Submit"/>
+                <input type="reset" value="Start Over"/>
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
 </html>
