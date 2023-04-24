@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <!--
+       Order Form
+
+       Filename: order.htm
+       Supporting files: styles.css, order.js
+
+    -->
+    <title>Order Form</title>
+    <link href="css/styles.css" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+
+<div id="links">
+    <a href="#" class="newgroup">Home Page</a>
+    <a href="#">Product Catalog</a>
+    <a href="#">Order Form</a>
+    <a href="#">Maps Online</a>
+    <a href="#">Contact Us</a>
+    <a href="#" class="newgroup">Countries</a>
+    <a href="#">States</a>
+    <a href="#">National Parks</a>
+    <a href="#">Hiking Trails</a>
+    <a href="#">Cities</a>
+    <a href="#">Astronomical</a>
+    <a href="#">Natural</a>
+    <a href="#" class="newgroup">GoMap 1.0</a>
+    <a href="#">Drive Planner 2.0</a>
+    <a href="#">Hiker 1.0</a>
+    <a href="#">G-Receiver I</a>
+    <a href="#">G-Receiver II</a>
+    <a href="#">G-Receiver III</a>
+    <a href="#" class="newgroup">Downloads</a>
+    <a href="#">Tech Support</a>
+    <a href="#">FAQs</a>
+</div>
+
+
+<form id="orders" method="post" action="done.htm">
+
+
+    <div id="main">
+        <h1>Order Form</h1>
+        <p id="datep">
+            <input class="text" id="date" name="date" size="11" value="mm-dd-yyyy"
+                   tabindex="-1" readonly="readonly"/>
+        </p>
+
+        <fieldset>
+            <legend>Enter the quantity of each item and press the Tab key</legend>
+            <table id="orderTable" cellspacing="2">
+                <tr>
+                    <th class="label">Product</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Cost</th>
+                </tr>
+                <tr>
+                    <td colspan="4" style="text-align:center;">
+                        <button type="button" onclick="addRow()">Add Row</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col3" colspan="3">Sales Tax (5%)</td>
+                    <td><input name="tax" id="tax" size="12" value="0.00" readonly="readonly"/></td>
+                </tr>
+                <tr>
+                    <td class="col3" colspan="3">Enter Shipping Zip Code</td>
+                    <td><input name="zipcode" id="zipcode" size="12" value="46901"/></td>
+                </tr>
+                <tr>
+                    <td class="col3" colspan="3"><input id="calculate" type="button" value="Calculate Total"/></td>
+                    <td><input name="total" id="total" size="12" value="0.00" readonly="readonly"/></td>
+                </tr>
+            </table>
+        </fieldset>
+        <!-- **************************************************************************** --->
+        <div id="mailinglist">
+            <p>
+                <label>Would you like to be contacted by phone to discuss this order?
+                    <input id="subscribe" type="checkbox"/>
+                </label>
+            </p>
+            <p>
+            <fieldset id="fSetSelection">
+                <table cellspacing="0">
+                    <tr>
+                        <td style="text-align:left">Enter Your Phone</td>
+                        <td style="text-align:left">
+                            <input name="phone" id="phone" size="20" value="" style="text-align:left"/>
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+        </div>
+        <!-- **************************************************************************** --->
+        <p id="pbuttons">
+            <input type="reset" value="Reset"/>
+            <input id="submit" type="submit" value="Submit Order"/>
+        </p>
+
+    </div>
+
+</form>
+
+<footer>
+    <script src="js/order.js"></script>
+</footer>
+</body>
+</html>

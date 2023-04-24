@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Online Bidding Auction</title>
+</head>
+<body>
+<h1>Online Bidding Auction</h1>
+<p>Current High Bid: <span id="highBid">0</span></p>
+<table>
+  <tr>
+    <th>Bidder ID</th>
+    <th>Bid Amount</th>
+  </tr>
+</table>
+<form>
+  <label for="bidderId">Bidder ID:</label>
+  <input type="text" id="bidderId" name="bidderId"><br>
+  <label for="bidAmount">Bid Amount:</label>
+  <input type="text" id="bidAmount" name="bidAmount"><br>
+  <input type="submit" value="Submit Bid" onclick="addBid(); return false;">
+</form>
+<button onclick="removeBids()">Remove All Bids</button>
+<script>
+  let bids = [];
+
+  function addBid() {
+    let bidderId = document.getElementById("bidderId").value;
+    let bidAmount = parseFloat(document.getElementById("bidAmount").value);
+
+    if (!bidderId || isNaN(bidAmount)) {
+      alert("Please enter a bidder ID and a valid bid amount.");
+      return;
+    }
+
+    if (bids.length > 0 && bidAmount <= bids[bids.length - 1].amount) {
+      alert("The bid amount must be larger than the previous bid.");
+      return;
+    }
+
+    let bid = { bidderId: bidderId, amount: bidAmount };
+    bids.push(bid);
+    document.getElementById("highBid").textContent = bidAmount;
+
+    let table = document.querySelector("table");
+    let row = table.insertRow();
+    let cell1 = row.insertCell();
+    let cell2 = row.insertCell();
+    cell1.textContent = bidderId;
+    cell2.textContent = bidAmount;
+  }
+
+  function removeBids() {
+    bids = [];
+    document.getElementById("highBid").textContent = "0";
+    let table = document.querySelector("table");
+    table.querySelectorAll("tr").forEach((row, index) => {
+      if (index > 0) {
+        row.remove();
+      }
+    });
+  }
+</script>
+</body>
+</html>
