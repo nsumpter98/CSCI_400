@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset = "utf-8">
+	  <title>Celsius to Fahrenheit Converter, Fahrenheit to Celsius converter </title>
+
+<script>
+	
+	function convertTemp() {
+		
+		var frm = document.getElementById("converter");	
+		var tempInput = parseFloat(frm.temp.value);
+		if (isNaN(tempInput) || tempInput == "") {
+			document.getElementById("output").style.color = "red";
+			document.getElementById("output").innerHTML = "Wrong Input!";
+			return false;	
+		}
+		if (frm.tofah.checked == false && frm.tocel.checked == false) {
+            // checking for checked radio buttons
+            document.getElementById("output").style.color = "red";
+            document.getElementById("output").innerHTML = "Please select a conversion type!";
+
+		
+		//Complete the code ....... 
+		}
+		//Complete the code .......
+
+        if (frm.tofah.checked == true) {
+            var fah = convertCelsiusToFahrenheit(tempInput);
+            document.getElementById("output").style.color = "green";
+            document.getElementById("output").innerHTML = tempInput + " Celsius = " + fah + " Fahrenheit";
+        }
+        if (frm.tocel.checked == true) {
+            var cel = convertFahrenheitToCelsius(tempInput);
+            document.getElementById("output").style.color = "green";
+            document.getElementById("output").innerHTML = tempInput + " Fahrenheit = " + cel + " Celsius";
+        }
+
+
+		
+	
+	}//end function
+	//This function will convert a given temp into Fahrenheit - it returns the results
+	function convertCelsiusToFahrenheit (temp) {
+		//local variable:
+		var fah = 9.0/5.0 * temp + 32;
+		return fah;
+		
+	}// function ends
+	//This function will convert a given temp into Fahrenheit - returns the results
+	function convertFahrenheitToCelsius (temp) {
+		//local variable:
+		var celsius = 5.0 / 9.0 * ( temp - 32 );
+		return celsius;
+		
+	}// function ends
+
+</script>
+</head>
+
+<body>
+<h3>Celsius/Fahrenheit Temprature Converter</h3>
+<form id="converter">
+    <table border="1">
+      <tr> 
+        <td>Enter Temprature</td>
+        <td> 
+          <input type="text" id="temp" size="6" />
+        </td>
+      </tr>
+      <tr> 
+        <td>Convert to Fahrenheit</td>
+        <td> 
+          <input type="radio" id="tofah" name ="conversion" />
+        </td>
+      </tr>
+      <tr> 
+        <td>Convert to Celsius</td>
+        <td> 
+            <input type="radio" id="tocel" name ="conversion" />
+        </td>
+      </tr>
+      <tr> 
+        <td> 
+            <input type="button" value="Convert" onClick="return convertTemp();" />
+        </td>
+		<td> <input type="reset" value="Reset"> </td>
+      </tr> 
+    </table>
+</form>
+<br>
+<div id="output"> 
+</div>
+</body>
+</html>

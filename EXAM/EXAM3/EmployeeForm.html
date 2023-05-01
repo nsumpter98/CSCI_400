@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Employee Form</title>
+
+
+    <style type="text/css">
+
+        .button {
+            width: 275px;
+        }
+
+        fieldset {
+            border: 0px;
+        }
+
+        .error {
+            color: red;
+            font-weight: bold;
+        }
+
+    </style>
+    <script>
+        const form = document.querySelector('form');
+        const startDateInput = document.getElementById('startdate');
+        const endDateInput = document.getElementById('enddate');
+        const daysInput = document.getElementById('days');
+
+
+        function checkform() {
+            var frm = document.getElementById("empform");
+            if (frm.empname.value == "") {
+                document.getElementById("name_error").innerHTML = "Please Enter Your Name";
+                return false;
+            } else {
+
+
+                document.getElementById("name_error").innerHTML = "";
+            }
+
+            if (frm.daysR.value == "") {
+                document.getElementById("days_error").innerHTML = "Please Enter Number of Days Requested";
+
+
+                return false;
+            } else {
+                if (isNaN(frm.daysR.value) || frm.daysR.value < 1 || frm.daysR.value > 15) {
+                    document.getElementById("days_error").innerHTML = "Number of days requested must be a numerical value between 1 and 15";
+                    return false;
+                }
+                document.getElementById("days_error").innerHTML = "";
+            }
+
+            if (frm.dates.value == "") {
+                document.getElementById("dates_error").innerHTML = "Please Enter Dates";
+                return false;
+            } else {
+
+                var date = frm.dates.value;
+                var dateRegex = /^\d{1,2}\/\d{1,2}\/\d{2,4} - \d{1,2}\/\d{1,2}\/\d{2,4}$/;
+                if (!dateRegex.test(date)) {
+                    document.getElementById("dates_error").innerHTML = "Please enter dates in the format: 4/11/20 – 4/20/20";
+                    return false;
+                }
+                document.getElementById("dates_error").innerHTML = "";
+            }
+
+            if (frm.manager.value == "") {
+                document.getElementById("manager_error").innerHTML = "Please Enter Manager Name";
+                return false;
+            } else {
+                document.getElementById("manager_error").innerHTML = "";
+            }
+
+            if (frm.approval.value == "") {
+                document.getElementById("approval_error").innerHTML = "Please Select Approval";
+                return false;
+            } else {
+                document.getElementById("approval_error").innerHTML = "";
+            }
+
+            if (frm.month.value == "month") {
+                document.getElementById("month_error").innerHTML = "Please Select Month";
+                return false;
+            } else {
+                document.getElementById("month_error").innerHTML = "";
+            }
+
+            if (frm.day.value == "day") {
+                document.getElementById("day_error").innerHTML = "Please Select Day";
+                return false;
+            } else {
+                document.getElementById("day_error").innerHTML = "";
+            }
+
+            if (frm.year.value == "year") {
+                document.getElementById("year_error").innerHTML = "Please Select Year";
+                return false;
+            } else {
+                document.getElementById("year_error").innerHTML = "";
+            }
+
+            if (frm.empname.value != "" && frm.daysR.value != "" && frm.dates.value != "" && frm.manager.value != "" && frm.approval.value != "" ) {
+                document.getElementById("empform").submit();
+            }
+            //Complete the code ....
+
+
+        }//end function
+
+
+    </script>
+</head>
+
+
+<body>
+<h2>Employee from</h2>
+
+<form id="empform" onsubmit="return checkform();">
+
+    <fieldset>
+        <table>
+            <tr>
+                <td>Employee Name</td>
+                <td><input type="text" maxlength="256" size="30" id="empname"/></td>
+                <td>
+                    <div class="error" id="name_error"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>Number of Days Requested</td>
+                <td><input type="text" maxlength="256" size="30" id="daysR"/></td>
+                <td>
+                    <div class="error" id="days_error"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>Dates(e.g., 4/11/20-4/20/20)</td>
+                <td><input type="text" maxlength="256" size="30" id="dates"/></td>
+                <td>
+                    <div class="error" id="dates_error"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>Manager Name</td>
+                <td><input type="text" maxlength="256" size="30" id="manager"/></td>
+                <td>
+                    <div class="error" id="manager_error"></div>
+                </td>
+            </tr>
+            <tr>
+                <td><input type="radio" name="approval" value="approved">Approved
+                    <input type="radio" name="approval" value="denied">Denied
+                </td>
+                <td>
+                    <div class="error" id="approval_error"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <select id="month">
+                        <option selected="selected" value="month">Month</option>
+                        <option value="January">January</option>
+                        <option value="February">February</option>
+                        <option value="March">March</option>
+                        <option value="April">April</option>
+                        <option value="May">May</option>
+                        <option value="June">June</option>
+                        <option value="July">July</option>
+                        <option value="August">August</option>
+                        <option value="September">September</option>
+                        <option value="October">October</option>
+                        <option value="November">November</option>
+                        <option value="December">December</option>
+                    </select>
+
+                    <select id="day">
+                        <option selected="selected" value="day">day</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                        <option value="24">24</option>
+                        <option value="25">25</option>
+                        <option value="26">26</option>
+                        <option value="27">27</option>
+                        <option value="28">28</option>
+                        <option value="29">29</option>
+                        <option value="30">30</option>
+                        <option value="31">31</option>
+                    </select>
+
+                    <select id="year">
+                        <option selected="selected" value="year">year</option>
+                        <option value="2017">2017</option>
+                        <option value="2018">2018</option>
+                        <option value="2019">2019</option>
+                        <option value="2020">2030</option>
+                        <option value="2021">2021</option>
+                    </select>
+                </td>
+                <td>
+                    <div class="error" id="date_action_error"></div>
+                </td>
+
+            </tr>
+
+        </table>
+
+    </fieldset>
+
+    <input type="submit" class="button" value="Notify Employee of Approval/Denial"/>
+
+</form>
+
+
+</body>
+
+</html>
