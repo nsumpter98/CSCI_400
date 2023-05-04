@@ -1,0 +1,63 @@
+body { 
+       font-family: Verdana, Arial, sans-serif; 
+       color: #000000;
+}
+
+#container { margin-left: auto;    
+       margin-right: auto;
+       width:80%;
+}
+
+
+#nav  table{ border: 1px solid rgb(173, 89, 28); width: 80%; text-align:center}
+#content {width: 80%;}
+.contact {
+        font-family: Georgia, "Times New Roman", serif;
+        color:#336633;     
+}
+.category {
+        font-family: Georgia, "Times New Roman", serif;
+         color:#336633;
+         font-size: 1.2em;
+         font-weight:bold; 
+}
+a {text-decoration:none; font-weight:bold; color: rgb(173, 89, 28);}
+a:hover {   color: white; 
+   background-color: rgb(173, 89, 28);}
+
+img { border:0;
+      padding-left:10px;
+}
+
+h1 {
+   font-size: 200%;
+   letter-spacing: 10px;
+   font-weight: normal;
+   color: rgb(173, 89, 28);
+}
+
+
+h2 {
+   font-size: 120%;
+   color: rgb(173, 89, 28);
+   letter-spacing: 3px;
+   font-weight: normal;
+}
+
+/* Formatting the form --- Not applied to this one! */
+
+.myRow {padding-bottom:10px;} /*adds spacing between the fields. you can also: height:30px*/
+/*
+.labelCol{float:left;
+          width: 100px; 
+          padding-right:10px;
+} 
+
+.mySubmit { margin:10px 10px 10px 110px; }
+
+#jobsform {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 16px;
+	color: #363;
+}
+*/

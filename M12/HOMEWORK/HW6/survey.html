@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+
+<html>
+   <head>
+		<meta charset = "utf-8" />
+		<title>Cliff Hangers</title>
+       <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+       <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+       <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+		<link href="cliff.css" rel="stylesheet" type="text/css" />
+	</head>
+<body> 
+
+<div id="container">
+
+<div id="logo">
+<p><img src="media\chlogo.png" alt="Cliff Hangers Climbing School" width="580" height="100" /></p>
+</div>
+
+<div id="nav">
+<table>
+<tr>
+    <td> <a href="index.html" title="Home">Home</a> </td>
+    <td> <a href="lessons.html" title="Lessons">Lessons</a> </td>
+    <td><a href="tours.html" title="Tours">Tours</a> </td>
+    <td><a href="staff.html" title="Staff">Staff</a> </td>
+    <td><a href="survey.html" title="Survey">Survey</a> </td>
+</tr>
+</table>
+</div>
+
+<div id="content">
+         <h1>Survey Form</h1>
+         <p>Contact us today for more information about Cliff Hangers and to schedule
+            a tour. Required information is indicated by an asterisk (*).
+         </p>
+
+      <form id="survey" name="survey"
+            action="http://www.cliffhangerschool.com/survey"
+            method="post">
+
+<table>
+<tr>
+          <td>  <label for="custname">Name *</label>  </td>
+           <td> <input name="custname" id="custname" size="40" /> </td>
+</tr>
+<tr><td></td><td></td></tr><tr><td></td><td></td></tr>
+<tr>
+      <td>      <label for="email">E-mail *</label> </td>
+        <td>    <input name="email" id="email" type="email" size="40" /> </td>
+</tr>
+<tr><td></td><td></td></tr><tr><td></td><td></td></tr>
+<tr>
+         <td>   <label>I'm interested in:</label> </td>
+	<td>
+               <label for= "lessons">Lessons only</label>
+               <input type="radio" name="custType" id="lessons"
+                      value="lessons" />
+               <label for= "tours">Tours only</label>
+               <input type="radio" name="custType" id="tours"
+                      value="tours" />
+               <label for= "both">Both</label>
+               <input type="radio" name="custType" id="both"
+                      value="both" />
+		</td>
+</tr>
+<tr><td></td><td></td></tr><tr><td></td><td></td></tr>
+<tr>
+      <td>      <label for= "comments">Your climbing goals</label></td>
+       <td>     <textarea name="comments" id="comments" rows="5" cols="40"></textarea></td>
+</tr>
+<tr><td></td><td></td></tr><tr><td></td><td></td></tr>
+<tr>
+   <td>         <input type="submit" value="Submit" />
+            <input type="reset" value="Cancel" /> 
+	</td>
+    </tr> 
+<tr><td></td><td></td></tr><tr><td></td><td></td></tr>
+         </table>
+
+      </form>
+	 
+</div>
+
+</div>
+<script>
+    $(document).ready(function(){
+        $("#nav a").tooltip();
+    });
+
+    $("#survey").validate({
+        rules: {
+            custname: {
+                required: true,
+                minlength: 6
+            },
+            email: {
+                required: true,
+                email: true
+            }
+        },
+        messages: {
+            custname: {
+                required: "Please enter your name",
+                minlength: "Name must be at least 6 characters"
+            },
+            email: {
+                required: "Please enter your email",
+                email: "Please enter a valid email"
+            }
+        }
+    });
+
+</script>
+</body>
+</html>

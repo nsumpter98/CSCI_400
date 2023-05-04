@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html>
+   <head>
+		<meta charset = "utf-8" />
+		<title>Cliff Hangers</title>
+	   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+		<link href="cliff.css" rel="stylesheet" type="text/css" />
+	</head>
+<body> 
+
+<div id="container">
+
+<div id="logo">
+<p><img src="media\chlogo.png" alt="Cliff Hangers Climbing School" width="580" height="100" /></p>
+</div>
+
+<div id="nav">
+<table>
+<tr>
+   <td> <a href="index.html" title="Home">Home</a> </td>
+   <td> <a href="lessons.html" title="Lessons">Lessons</a> </td>
+	<td><a href="tours.html" title="Tours">Tours</a> </td>
+	<td><a href="staff.html" title="Staff">Staff</a> </td>
+	<td><a href="survey.html" title="Survey">Survey</a> </td>
+</tr>
+</table>
+</div>
+
+<div id="content">
+<p>
+<img style="float:right" src="media\home.png" alt="" width="220" height="300" />
+Welcome to one of America's best climbing schools, located in one of 
+            America's best climbing areas &mdash; the Colorado Rockies. Nowhere else in 
+            America is there such a rich variety of technically 
+            challenging rock, ice, and high alpine routes. The area presents the 
+            climber with a choice of multiple-pitch climbs and big wall routes. Whether 
+            you are here to enjoy the spectacular scenery or to train for an expedition, 
+            you can choose no better place than the Colorado Front Range.
+</p>
+         <p>And no one else brings the experience of the Rockies to you better than 
+            Cliff Hangers Climbing School. Whether you are a beginner itching to 
+            learn the skill and art of 
+            climbing, or an experienced mountaineer looking for guides to take you on 
+            some of Rocky Mountain National Park's more challenging climbs, consider us 
+            your gateway to the mountains.
+         </p>
+	<h2> Latest News</h2>
+	<div id = "news">
+	<h4>News item 1 </h4>
+	<p>
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
+	ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+	nisi ut aliquip ex ea commodo consequat
+	</p>
+	<h4>News item 2 </h4>
+	<p>
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
+	ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+	nisi ut aliquip ex ea commodo consequat
+	</p>
+	<h4>News item 3 </h4>
+	<p>
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
+	ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+	nisi ut aliquip ex ea commodo consequat
+	</p>
+	</div>
+
+
+</div>
+</div>
+
+<script>
+	$(document).ready(function(){
+		$("#news").accordion();
+	});
+
+	$(document).ready(function(){
+		$("#nav a").tooltip();
+	});
+
+
+
+</script>
+</body>
+</html>
